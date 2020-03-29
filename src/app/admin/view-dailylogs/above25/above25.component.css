@@ -1,0 +1,15 @@
+
+/* BASIC */
+
+  
+body {
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  height: 50vh;
+}
+
+a {
+  color: #92badd;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}

@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 50%;
+  background: #fff;
+  margin-left:30%;
+  margin-top:8%;
+  min-height: 40%;
+  padding: 1px;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+}

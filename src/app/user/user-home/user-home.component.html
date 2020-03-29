@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">Online Diet System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="dietZone" (click)="active(1)">Diet Zone</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="chats" (click)="active(2)">Chats</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="updatedaily" (click)="active(3)">Update Daily Logs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="updatemonthly" (click)="active(4)">Update Monthly Measurements</a>
+                </li>
+                <li class="nav-item">
+                    <div *ngIf="access">
+                            
+                        <a class="nav-link" routerLink="viewdaily" (click)="active(5)">View Daily Logs</a>
+                    </div>
+                </li>      
+                <li class="nav-item">
+                        <div *ngIf="access">    
+                        <a class="nav-link" routerLink="viewmonthly" (click)="active(6)">View Monthly Measurements</a>
+                          
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="tabcontent">
+        <router-outlet></router-outlet>
+    </div>
+</body>
+</html>

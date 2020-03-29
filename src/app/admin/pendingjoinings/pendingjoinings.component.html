@@ -1,0 +1,42 @@
+<html>
+
+<body>
+
+    <div *ngIf="users[0]!=null">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">MailID</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.fname}}</td>
+                    <td>{{user.lname}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.email}}</td>
+                    <td>
+                        <button (click)="approve(user)" type="button" class="btn btn-success">Approve</button><br>
+                        <button (click)="reject(user)" type="button" class="btn btn-danger">Reject </button>
+                    </td>
+                    <td><a [routerLink]="['userdetails',user.email]">Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="users[0]==null">
+        <div>
+            <h4 style="color: red;">No New Requests!</h4>
+            <h5 style="color:red;">When people send you joining requests,they will appear here.</h5>
+        </div>
+    </div>
+</body>
+
+</html>

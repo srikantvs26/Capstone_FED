@@ -1,0 +1,37 @@
+<html>
+
+<head></head>
+
+<body>
+    <h2> Daily Logs </h2>
+    <div class="wrapper" *ngIf="show">
+        <table class="table table-bordered table-hover table-sm" align="center">
+            <thead class="thead-dark">
+                <tr>
+                    <tr>
+                        <th>Slno</th>
+                        <th>Date</th>
+                        <th>First Name</th>
+                        <th>Email</th>
+                        <th>File (Click to download)</th>
+                        <th>Upload History</th>
+
+                    </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let file of (files | async); let i = index;">
+                    <td>{{1+i}}</td>
+                    <td>{{file.datelog}}</td>
+                    <td>{{file.fname}}</td>
+                    <td>{{file.email}}</td>
+                    <td><a href="http://localhost:8080/DietSystem/dailyfile/{{file.id}}">{{file.name}}</a></td>
+                    <td><a [routerLink]="['uploadhistory',file.email]">More Info</a></td>
+                </tr>
+          
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>

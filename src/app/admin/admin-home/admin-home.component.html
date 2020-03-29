@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">Online Diet System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="pendingJoinings" (click)="active(1)">New Joinings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="dietZones" (click)="active(2)">Diet Zones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="chats"(click)="active(3)">Chats</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="allusers"(click)="active(4)">All Users</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="viewdaily"(click)="active(5)">Daily Reports</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="viewmonthly"(click)="active(6)">Monthly Reports</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="tabcontent">
+        <router-outlet></router-outlet>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<h2>
+  List of {{a}} Users</h2><br>
+<div class="container">
+  <input type="text" [(ngModel)]="search" style="width: 50%;" placeholder=" search..." />
+  <br><br>
+  <button (click)="above()" type="button" class="btn btn-success">Above BMI25</button>
+  <button (click)="below()" type="button" class="btn btn-primary">Below BMI25</button>
+  <button (click)="allusers()" type="button" class="btn btn-info">All Users</button>
+</div>
+
+
+
+<table class="table table-bordered table-hover table-sm" align="center">
+    <thead class="thead-dark">
+        <tr>
+            <th >Firstname</th>
+            <th>Lastname</th>
+            <th >Email</th>
+            <th>Type</th>
+            <th>Action</th>
+            <th>Info</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users | searchByMail : search ">
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td>{{user.email}}</td>
+            <td style="text-align: center;">
+                <div class="dropdown">
+                  <button class="btn btn-primary btn-block">{{user.type}}</button>
+    
+                  <div class="dropdown-content">
+                    <button style="border: none;background: none" (click)=" permission(user.email,'user')">User</button><br/>
+                    <button style="border: none;background: none" (click)=" permission(user.email,'motivator')">Motivator</button><br/>
+                    <button style="border: none;background: none" (click)=" permission(user.email,'admin')">Admin</button>
+                  </div>
+                </div>
+              </td>
+
+              <td> <button (click)="delete(user.email)" class="btn" style="margin-left: 1%;"><i class="fa fa-remove"></i></button>            </td>
+              <td><a [routerLink]="['userdetails',user.email]">Details</a></td>
+        </tr>   
+    </tbody>
+</table>

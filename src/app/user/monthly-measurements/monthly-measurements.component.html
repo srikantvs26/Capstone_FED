@@ -1,0 +1,47 @@
+<h1> Monthly Measurements </h1>
+<div class="wrapper">
+    <div class="formContent">
+        <table>
+            <tbody>
+                <tr>
+                    <th><b>First Month:</b></th>
+                    <td>
+                        <div *ngIf="monthlyStatus[0]==0"><button (click)="enroll(1)" type="button" class="btn btn-warning">Upload Month 1</button></div>
+                        <div *ngIf="monthlyStatus[0]==1">
+                            <b>File has been uploaded</b>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><b>Second Month:</b></th>
+                    <td>
+                        <div *ngIf="monthlyStatus[1]==0"><button (click)="enroll(2)" type="button" class="btn btn-info"> Upload Month 2</button></div>
+                        <div *ngIf="monthlyStatus[1]==1">
+                            <b>File has been uploaded</b>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><b>Final Month:</b></th>
+                    <td>
+                        <div *ngIf="monthlyStatus[2]==0"><button (click)="enroll(3)" type="button" class="btn btn-primary"> Upload Month 3</button></div>
+                        <div *ngIf="monthlyStatus[2]==1">
+                            <b>File has been uploaded</b>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div *ngIf="show">
+            <div class="tabcontent">
+                <label class="btn btn-default">
+            <input type="file" (change)="selectFile($event)">
+    </label>
+
+                <button class="btnsend" [disabled]="!selectedFiles" (click)="upload()"><i class="fa fa-upload"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>

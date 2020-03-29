@@ -1,0 +1,28 @@
+        <div class="wrapper">
+            <div id="formContent">
+
+                <div *ngIf="!permission">
+                    <h4>You have already updated!!</h4>
+                    <h5 style="color:black;">(You can only update the log for previous day!)</h5>
+                </div>
+                <div *ngIf="permission">
+                    <div *ngIf="!uploaded">
+                        <h4><i>Upload Your food and exercise details</i></h4>
+                        <h5 style="color:grey;">Please upload only once</h5>
+                        <div class="panel panel-primary">
+                            <div class="tabcontent">
+                                <label class="btn btn-default">
+                    <input type="file" (change)="selectFile($event)">
+            </label>
+                                <br>
+                                <br>
+                                <button class="btnsend" [disabled]="!selectedFiles" (click)="upload()">Upload File</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="uploaded">
+                        <h3>File Uploaded Successfully!!</h3><span class="glyphicon glyphicon-duplicate"></span>
+                    </div>
+                </div>
+            </div>
+        </div>

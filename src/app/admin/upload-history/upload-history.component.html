@@ -1,0 +1,38 @@
+<html>
+
+<head></head>
+
+<body>
+
+
+
+
+    <div class="wrapper">
+
+
+        <h2> Upload History</h2>
+        <div class="wrapper">
+            <table class="table table-bordered table-hover table-sm" align="center">
+                <thead class="thead-dark">
+                    <tr>
+                        <tr>
+                            <th>Date</th>
+                            <th>First Name</th>
+                            <th>Email</th>
+                            <th>File (Click to download)</th>
+
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let file of files | async">
+                        <td>{{file.datelog}}</td>
+                        <td>{{file.fname}}</td>
+                        <td>{{file.email}}</td>
+                        <td><a href="http://localhost:8080/DietSystem/dailyfile/{{file.id}}">{{file.name}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

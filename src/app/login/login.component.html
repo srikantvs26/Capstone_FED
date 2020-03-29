@@ -1,0 +1,26 @@
+<html>
+
+<body>
+    <h1>Online Referral Based Diet System</h1>
+    <div id="container">
+        <h2 style="text-align: center;color: green">Login</h2>
+        <form #formL="ngForm" (ngSubmit)="formL.form.valid && login()">
+            <input type="text" name="email" id="email" #e="ngModel" [(ngModel)]="email" placeholder="User Id" required
+            />
+            <div *ngIf="formL.submitted && e.invalid" class="feedback">
+                <div *ngIf="e.errors.required">*User Id is required</div>
+            </div>
+            <input type="password"  name="p" id="p" #p="ngModel" [(ngModel)]="pass" placeholder="Password" required
+            />
+            <div *ngIf="formL.submitted && p.invalid" class="feedback">
+                <div *ngIf="p.errors.required">*Password is required</div>
+            </div>
+            <input type="submit" value="Submit" />
+        </form>
+        <a routerLink="signup">Register</a>
+
+    </div>
+
+</body>
+
+</html>

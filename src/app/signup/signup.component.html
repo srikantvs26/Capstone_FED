@@ -1,0 +1,224 @@
+<html>
+
+<body>
+    <h1>Sign Up</h1>
+    <div class="container">
+        <form #signup="ngForm" (ngSubmit)="signup.form.valid && submit(signup.value)" novalidate>
+            <h3>User Details Registration </h3>
+            <table>
+                <tr>
+                    <td> <input placeholder="UserID" class="fadeIn first" #userid="ngModel" ngModel name="userid" type="text"
+                            id="userid" required/>
+
+                        <div *ngIf="signup.submitted && fname.invalid" class="feedback">
+                            <div *ngIf="fname.errors.required">*First Name is required</div>
+                        </div>
+
+                    </td>
+                    <td> <input placeholder="Password" class="fadeIn second" #password="ngModel" ngModel name="password" type="password"
+                            id="password" required/>
+
+                        <div *ngIf="signup.submitted && lname.invalid" class="feedback">
+                            <div *ngIf="lname.errors.required">*Last Name is required</div>
+                        </div>
+
+
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td> <input placeholder="First Name" class="fadeIn first" #fname="ngModel" ngModel name="fname" type="text"
+                            id="fname" required/>
+
+                        <div *ngIf="signup.submitted && fname.invalid" class="feedback">
+                            <div *ngIf="fname.errors.required">*First Name is required</div>
+                        </div>
+
+                    </td>
+                    <td> <input placeholder="Last Name" class="fadeIn second" #lname="ngModel" ngModel name="lname" type="text"
+                            id="lname" required/>
+
+                        <div *ngIf="signup.submitted && lname.invalid" class="feedback">
+                            <div *ngIf="lname.errors.required">*Last Name is required</div>
+                        </div>
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <input placeholder="Age" class="fadeIn first" #age="ngModel" ngModel name="age" type="number" id="age" required />
+                        <div *ngIf="signup.submitted && age.invalid" class="feedback">
+                            <div *ngIf="age.errors.required">*Age is required</div>
+                            <div *ngIf="age.errors.pattern">*Invalid Age</div>
+                        </div>
+
+                    </td>
+                    <td> <input placeholder="Email ID" class="fadeIn fourth" #email="ngModel" ngModel name="email" type="email"
+                            id="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" />
+                        <div *ngIf="signup.submitted && email.invalid" class="feedback">
+                            <div *ngIf="email.errors.required">*Email is required</div>
+                            <div *ngIf="email.errors.pattern">*Invalid Email Format</div>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+
+
+                    <td>
+                        <label>Gender</label>
+                        <input type="radio"  #gender="ngModel" ngModel name="gender" value="male" required="required"/>Male
+                        <input type="radio"  #gender="ngModel" ngModel name="gender" value="female" required="required"/>Female
+                        <div *ngIf="signup.submitted && gender.invalid" class="feedback">
+                            <div *ngIf="gender.errors.required">*Gender is required</div>
+                        </div>
+                    </td>
+
+
+                    <td>
+
+                        <input class="fadeIn third" placeholder="Mobile Number" #mobile="ngModel" ngModel name="mobile" type="number" id="mobile"
+                            required pattern="[6789][0-9]{9}" />
+
+                        <div *ngIf="signup.submitted && mobile.invalid" class="feedback">
+                            <div *ngIf="mobile.errors.required">*Mobile number is required</div>
+                            <div *ngIf="mobile.errors.pattern">*Invalid Mobile Format</div>
+                        </div>
+
+
+                    </td>
+
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <textarea class="fadeIn third" placeholder="Address" #address="ngModel" ngModel name="address" id="addr" required></textarea>
+                        <div *ngIf="signup.submitted && address.invalid" class="feedback">
+                            <div *ngIf="address.errors.required">*Address is required</div>
+                        </div>
+                    </td>
+
+
+                    <td>
+
+                        <input class="fadeIn third" placeholder="City" #city="ngModel" ngModel name="city" type="text" id="city" required/>
+                        <div *ngIf="signup.submitted && city.invalid" class="feedback">
+                            <div *ngIf="city.errors.required">*City is required</div>
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input class="fadeIn third" placeholder="State" #state="ngModel" ngModel name="state" type="text" id="state" required/>
+                        <div *ngIf="signup.submitted && state.invalid" class="feedback">
+                            <div *ngIf="state.errors.required">*State is required</div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <select class="fadeIn third" #country="ngModel" ngModel name="country" id="country" required>
+                            <option value="">Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Australia">Australia</option>
+                        </select>
+                        <div *ngIf="signup.submitted && country.invalid" class="feedback">
+                            <div *ngIf="country.errors.required">*Country is required</div>
+                        </div>
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+
+
+                    <td>
+                        <input class="fadeIn third" placeholder="Pincode" #pincode="ngModel" ngModel name="pincode" type="number" id="pin" required/>
+                        <div *ngIf="signup.submitted && pincode.invalid" class="feedback">
+                            <div *ngIf="pincode.errors.required">*Pincode is required</div>
+                        </div>
+                    </td>
+
+
+                    <td>
+                        <input class="fadeIn third" placeholder="Height (Meter)" #height="ngModel" ngModel name="height" type="number" id="height"
+                            required/>
+                        <div *ngIf="signup.submitted && height.invalid" class="feedback">
+                            <div *ngIf="height.errors.required">*Hieght is required</div>
+                        </div>
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <input class="fadeIn third" placeholder="Weight (Kilo Gram)" #weight="ngModel" ngModel name="weight" type="number" id="weight"
+                            required/>
+                        <div *ngIf="signup.submitted && weight.invalid" class="feedback">
+                            <div *ngIf="weight.errors.required">*Weight is required</div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <input class="fadeIn third" placeholder="Medical Conditions(If Any)" ngModel name="medical" type="text" id="medical" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <input class="fadeIn third" placeholder="Dietary Restrications(If Any)" ngModel name="dietary" type="text" id="dietary" />
+
+                    </td>
+                    <td>
+                        <label>Food Specifications</label>
+                        <input ngModel name="food" type="radio" value="Nonveg" #veg="ngModel" required="required">Non-Veg
+                        <input ngModel name="food" type="radio" value="Veg" required="required"/>Veg
+                        <div *ngIf="signup.submitted && veg.invalid" class="feedback">
+                            <div *ngIf="veg.errors.required">*Required</div>
+                        </div>
+
+                    </td>
+
+
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <input class="fadeIn third" placeholder="Referal Code" ngModel name="referral" type="text" id="referral" />
+                    </td>
+                    <td>
+                        <input type="submit" value="Sign Up " />
+                    </td>
+                </tr>
+
+
+
+
+            </table>
+          
+
+        </form>
+
+    </div>
+</body>
+
+</html>

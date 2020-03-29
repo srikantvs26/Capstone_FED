@@ -1,0 +1,23 @@
+
+   .my-custom-scrollbar{
+      position: relative;
+      height: 200px;
+      overflow: auto;
+    }
+    .table-wrapper-scroll-y{
+      display: block;
+    }
+    .container{
+      position: fixed;
+      width: 1500px;
+      height: 900px;
+      top: 40%; 
+      left: 20%;
+      margin-top: -140px;
+      margin-left: -170px;
+    }
+
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+     padding-top:70px;
+    }

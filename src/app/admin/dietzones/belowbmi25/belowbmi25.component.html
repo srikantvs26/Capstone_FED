@@ -1,0 +1,96 @@
+<div class="wrapper">
+        <div id="formContent">
+            <table>
+                <tr>
+                    <td>
+                        <h1 >BMI < 25 Chats</h1>
+                        <div>
+                            <form (ngSubmit)="send()">
+                                <div class="form-group green-border-focus">
+                                    <textarea rows="5" cols="100" placeholder="Send Message" class="form-control form-control-sm" ngModel name="msg" id="msg"
+                                        [(ngModel)]="msg"></textarea>
+                                    <br/>
+                                    <button class="btnsend">SEND Message</button>
+                                </div>
+                            </form>
+    
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="scrollbar scrollbar-primary">
+                <div class="force-overflow">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <div class="chat">
+                            <div *ngFor="let msg of msgs">
+                                <div *ngIf="msg.msg!=null">
+                                    <div *ngIf="msg.fname==emailId.fname">
+                                        <div class="mine messages">
+                                            <div class="message last">
+                                                <br>
+                                                <span class="othermsg">{{msg.msg}}</span><br><br>
+                                                <small><small><small><small style="float: right;color: black;">{{msg.time}}</small></small>
+                                                </small>
+                                                </small><br>
+                                            </div>
+                                            <button class="btn" (click)="delete(msg)"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="msg.fname!=emailId.fname">
+                                        <div class="yours messages">
+                                            <div class="message last">
+                                                <br><small style="float: left;">{{msg.fname}}:</small><br>
+                                                <span class="othermsg">{{msg.msg}}</span><br><br>
+                                                <small><small><small><small style="float: right;">{{msg.time}}</small></small>
+                                                </small>
+                                                </small><br>
+                                            </div>
+                                            <button class="btn" (click)="delete(msg)"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+        </div>
+        <br>
+    
+        <div class="tabcontent">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    
+                <h1>BMI < 25Files</h1>
+    
+                <h4 style="text-decoration: underline">Uploaded Files </h4><br>
+                <div class="scrollbars scrollbar-primary">
+                    <div class="force-overflow">
+                        <table>
+                            <div *ngFor="let file of fileUploads | async">
+                                <div class="panel-body">
+    
+                                    <tr>
+                                        <td> <a href="http://localhost:8080/DietSystem/file/{{file.id}}">{{file.name}}</a>
+                                            <button style="color: red" class="btn" (click)="deletefile(file.id)"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr> <br>
+    
+                                </div>
+                            </div>
+                        </table>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+    
+                <label>
+            <input type="file" (change)="selectFile($event)">
+        </label>
+                <button class="btnsend" [disabled]="!selectedFiles" (click)="upload()">Upload File</button>
+    
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,31 @@
+<div class="wrapper">
+    <div class="tab">
+
+        <p class="pt"><button (click)="clicked()">Start new chat</button></p>
+
+        <div class="scrollbar scrollbar-primary">
+            <div class="force-overflow">
+                <div class="ptt" *ngIf="click">
+                    <select [(ngModel)]="email">
+                            <option *ngFor="let user of users | searchByMail : search "    value="{{user.email}}">{{user.email}}</option>
+                    </select>
+                    <textarea rows="5" cols="35" placeholder="Send Message" [(ngModel)]="firstMsg" id="msg"></textarea>
+                    <button class="btnsend" (click)="send()">SEND Message</button>
+                </div>
+                <p *ngFor="let msg of (msgs | unique);  let i = index;">
+                    <a [routerLink]="['chattimeline',msg.tmail,msg.fmail]">
+                        <p class="l">
+                            <button [ngClass]="{'active':isClicked[i]}" (click)="activated();isClicked[i] = (isClicked[i] ? false :true )">
+                                {{msg.f}}
+                            </button></p>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="tabcontent">
+        <router-outlet></router-outlet>
+    </div>
+</div>

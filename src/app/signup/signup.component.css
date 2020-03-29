@@ -1,0 +1,93 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: 'Times New Roman', Times, serif;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+	
+}
+.feedback{
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}
+  a {
+    color: #92badd;
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+
+  form {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  input {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+  }
+  textarea,input[type=text], input[type=password],input[type=email] ,input[type=number]{
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 2px;
+    margin-left: 18px;
+    width: 290px;
+    height: 35px;
+    border: 1px solid #c7d0d2;
+    border-radius: 2px;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4);
+  }
+  label{
+    margin: 10px;
+    margin-top: 2px;
+    margin-left: 18px;
+  }
+
+
+select{
+  color: #777;
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 2px;
+  margin-left: 18px;
+  width: 300px;
+  height: 35px;
+  border: 1px solid #c7d0d2;
+  border-radius: 2px;
+  box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4); 
+}
+
+  input[type=submit] {
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 300px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #063E20;
+    border-radius: 30px;
+    border: 1px solid #006699;
+  }
+  
+  input[type=submit]:hover {
+    background: #61C955;
+  }
+
+  input[type="radio"]{
+  
+    border-bottom: 2px solid #5fbae9;
+    display: inline;
+
+  }
+
+  .container{
+
+ width: 800px;
+ margin: auto;
+   
+   
+
+  }

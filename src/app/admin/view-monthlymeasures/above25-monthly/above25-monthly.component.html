@@ -1,0 +1,41 @@
+<html>
+
+<head></head>
+
+<body>
+
+
+    <table class="table table-bordered table-hover table-sm" align="center">
+        <thead class="thead-dark">
+            <tr>
+                <th>Slno</th>
+                <th>Name</th>
+                <th>EmailId</th>
+                <th>First Month</th>
+                <th>Second Month</th>
+                <th>Third Month</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | searchByMail : search ">
+                <tr *ngFor="let file of (files | async); let i = index;">
+                    <td>{{1+i}}</td>
+                    <td>{{file.fname}}</td>
+                    <td>{{file.email}}</td>
+                    <td>
+                        <div *ngIf="file.nameFirstF=='null'"><i>Yet to upload</i></div>
+                        <div *ngIf="file.nameFirstF!='null'"><a href="http://localhost:8080/DietSystem/monthlyfile/1/{{file.email}}">{{file.nameFirstF}}</a></div>
+                    </td>
+                    <td>
+                        <div *ngIf="file.nameSecondF=='null'"><i>Yet to upload</i></div>
+                        <div *ngIf="file.nameSecondF!='null'"><a href="http://localhost:8080/DietSystem/monthlyfile/2/{{file.email}}">{{file.nameSecondF}}</a></div>
+                    </td>
+                    <td>
+                        <div *ngIf="file.nameThirdF=='null'"><i>Yet to upload</i></div>
+                        <div *ngIf="file.nameThirdF!='null'"><a href="http://localhost:8080/DietSystem/monthlyfile/3/{{file.email}}">{{file.nameThirdF}}</a></div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</body>
+</html>

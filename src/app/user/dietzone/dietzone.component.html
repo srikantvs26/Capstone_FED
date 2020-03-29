@@ -1,0 +1,93 @@
+<div class="wrapper">
+    <div id="formContent">
+        <h3>My Chat</h3><br><br><br>
+        <div class="scrollbar scrollbar-primary">
+            <div class="force-overflow">
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <div class="chat">
+                        <div *ngFor="let msg of msgs">
+                            <div *ngIf="msg.msg!=null">
+                                <div *ngIf="msg.fname==emailId.fname">
+                                    <div class="mine messages">
+                                        <div class="message last">
+                                            <br>
+                                            <span class="othermsg">{{msg.msg}}</span><br><br>
+                                            <small><small><small><small style="float: right;color: black;">{{msg.time}}</small></small>
+                                            </small>
+                                            </small><br>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div *ngIf="msg.fname!=emailId.fname">
+                                    <div class="yours messages">
+                                        <div class="message last">
+                                            <br><small style="float: left;">{{msg.fname}}:</small><br>
+                                            <span class="othermsg">{{msg.msg}}</span><br><br>
+                                            <small><small><small><small style="float: right;">{{msg.time}}</small></small>
+                                            </small>
+                                            </small><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+           
+                <div *ngIf="send">
+                    <form (ngSubmit)="sent()">
+                        <div class="form-group green-border-focus">
+                            <textarea maxlength="20" placeholder="Type a message" class="form-control form-control-sm" ngModel name="msg" id="msg" [(ngModel)]="msg"></textarea>
+                            <button class="btnsend">Send Message</button>
+                        </div>
+                    </form>
+               
+                </div>
+        
+    </div>
+    <br>
+
+    <div class="tabcontent">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+            <H3>My Files</H3><br>
+
+            <h4>Uploaded Files </h4><br>
+            <div class="scrollbars scrollbar-primary">
+                <div class="force-overflow">
+                    <table>
+                        <div *ngFor="let file of fileUploads | async">
+                            <div class="panel-body">
+
+                                <tr>
+                                    <td> <a href="http://localhost:8080/DietSystem/file/{{file.id}}">{{file.name}}</a>
+
+                                    </td>
+                                </tr> <br>
+
+                            </div>
+                        </div>
+                    </table>
+
+
+
+                    <br>
+
+                    <br>
+                </div>
+            </div>
+            <div *ngIf="send">
+                <label>
+            <input type="file" (change)="selectFile($event)">
+        </label>
+                <button class="btnsend" [disabled]="!selectedFiles" (click)="upload()">Upload File</button>
+            </div>
+        </div>
+    </div>
+</div>

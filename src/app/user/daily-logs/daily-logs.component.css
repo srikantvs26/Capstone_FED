@@ -1,0 +1,26 @@
+body{
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 90%;
+    height: 50%;
+    margin-left: 45px;
+  }
+  
+.btnsend{
+  color:black;
+}
+  .btnsend:hover {
+    color:  green;
+    font-size: 20px;
+  }
+
+  body{
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    padding-top: 50px;
+  }

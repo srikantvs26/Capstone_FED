@@ -1,0 +1,20 @@
+* {box-sizing: border-box}
+
+body {font-family: "Lato", sans-serif; 
+}
+
+.nav-item{
+  font-size: 15px;
+  font-weight: bold;
+}
+.nav-link:hover {
+	background-color:aquamarine;
+}
+
+.nav-item{
+  padding-right:50px;
+}
+
+.navbar-light .navbar-nav .nav-link:active {
+  color: black;
+}
