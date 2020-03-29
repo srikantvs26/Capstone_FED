@@ -29,7 +29,7 @@ export class Main {
 
 
     constructor(private http:HttpClient){
-        this.baseUrl='https://capstone-bed.herokuapp.com';
+        this.baseUrl='https://capstone-bed.herokuapp.com/DietSystem';
     }
     newUser(nU:NewUser):Observable<boolean>{
         const newurl=`${this.baseUrl}/signup`;
