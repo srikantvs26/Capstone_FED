@@ -8,8 +8,11 @@ const app = express();
 // Serve only the static files form the dist directory
 app.use(express.static('./dist/OnlineDietSystem'));
 
-app.get('/*', function(req,res) {
-res.header('Access-Control-Allow-Origin', '*');
+app.get('/*', function(req,res,next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();    
 res.sendFile(path.join(__dirname,'/dist/OnlineDietSystem/index.html'));
 });
 
