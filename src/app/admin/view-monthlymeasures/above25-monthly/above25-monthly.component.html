@@ -17,7 +17,6 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users | searchByMail : search ">
                 <tr *ngFor="let file of (files | async); let i = index;">
                     <td>{{1+i}}</td>
                     <td>{{file.fname}}</td>
