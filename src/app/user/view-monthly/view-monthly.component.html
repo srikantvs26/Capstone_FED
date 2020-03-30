@@ -24,16 +24,16 @@
                     <td>{{file.fname}}</td>
                     <td>{{file.email}}</td>
                     <td>
-                        <div *ngIf="file.nameFirstF=='null'"><i>Yet to upload</i></div>
-                        <div *ngIf="file.nameFirstF!='null'"><a href="http://localhost:8080/DietSystem/monthlyfile/1/{{file.email}}">{{file.nameFirstF}}</a></div>
+                        <div *ngIf="file.nameFirstF=='null'"><i>Not Uploaded</i></div>
+                        <div *ngIf="file.nameFirstF!='null'"><a href="https://capstone-bed.herokuapp.com/monthlyfile/1/{{file.email}}">{{file.nameFirstF}}</a></div>
                     </td>
                     <td>
-                        <div *ngIf="file.nameSecondF=='null'"><i>Yet to upload</i></div>
-                        <div *ngIf="file.nameSecondF!='null'"><a href="http://localhost:8080/DietSystem/monthlyfile/2/{{file.email}}">{{file.nameSecondF}}</a></div>
+                        <div *ngIf="file.nameSecondF=='null'"><i>Not Uploaded</i></div>
+                        <div *ngIf="file.nameSecondF!='null'"><a href="https://capstone-bed.herokuapp.com/monthlyfile/2/{{file.email}}">{{file.nameSecondF}}</a></div>
                     </td>
                     <td>
-                        <div *ngIf="file.nameThirdF=='null'"><i>Yet to upload</i></div>
-                        <div *ngIf="file.nameThirdF!='null'"><a href="http://localhost:8080/DietSystem/monthlyfile/3/{{file.email}}">{{file.nameThirdF}}</a></div>
+                        <div *ngIf="file.nameThirdF=='null'"><i>Not Uploaded</i></div>
+                        <div *ngIf="file.nameThirdF!='null'"><a href="https://capstone-bed.herokuapp.com/monthlyfile/3/{{file.email}}">{{file.nameThirdF}}</a></div>
                     </td>
                 </tr>
 
