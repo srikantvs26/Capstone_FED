@@ -3,7 +3,7 @@
 
                 <div *ngIf="!permission">
                     <h4>You have already updated!!</h4>
-                    <h5 style="color:black;">(You can only update the log for previous day!)</h5>
+                    <h5 style="color:black;">Yesterday's log only you can update</h5>
                 </div>
                 <div *ngIf="permission">
                     <div *ngIf="!uploaded">

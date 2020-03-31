@@ -23,7 +23,7 @@
                     <td>{{user.age}}</td>
                     <td>{{user.email}}</td>
                     <td>
-                        <button (click)="approve(user)" type="button" class="btn btn-success">Approve</button><br>
+                        <button (click)="approve(user)" type="button" class="btn btn-success">Accept</button><br>
                         <button (click)="reject(user)" type="button" class="btn btn-danger">Reject </button>
                     </td>
                     <td><a [routerLink]="['userdetails',user.email]">Details</a></td>
@@ -33,8 +33,8 @@
     </div>
     <div *ngIf="users[0]==null">
         <div>
-            <h4 style="color: red;">No New Requests!</h4>
-            <h5 style="color:red;">When people send you joining requests,they will appear here.</h5>
+            <h4 style="color: red;">No New Challengers</h4>
+            <h5 style="color:red;">New Challengers will be displayed here</h5>
         </div>
     </div>
 </body>

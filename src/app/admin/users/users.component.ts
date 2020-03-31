@@ -44,7 +44,7 @@ above(){
   this.main.getUsersByDiv(26).subscribe(resp=>{
     if(resp)
     { this.users=resp;
-      this.a='Above BMI25';
+      this.a='Above BMI 25';
     }
   })
 }
@@ -52,14 +52,14 @@ below(){
   this.main.getUsersByDiv(24).subscribe(resp=>{
     if(resp)
     { this.users=resp;
-      this.a='Below BMI25';}
+      this.a='Below BMI 25';}
   })
 }
 allusers(){
   this.main.getUsers().subscribe(resp=>{
     if(resp){
     this.users=resp;
-    this.a='All';
+    this.a='all';
   }
   })
 }
